@@ -1,12 +1,20 @@
 package edu.hw1;
 
-public class FifthTask {
+public class Task5 {
+
+    private static final int CONFIG_VALUE = 10;
+
+    private Task5() {
+        // приватный конструктор
+    }
+
     public static boolean isPalindromeDescendant(int number) {
-        while (number >= 10) {
-            if (isPalindrome(number)) {
+        int currentNumber = number;
+        while (currentNumber >= CONFIG_VALUE) {
+            if (isPalindrome(currentNumber)) {
                 return true;
             }
-            number = getDescendant(number);
+            currentNumber = getDescendant(currentNumber);
         }
         return false;
     }

@@ -1,10 +1,17 @@
 package edu.hw1;
 
-public class EighthTask {
+public class Task8 {
+
+    private static final int CONFIG_VALUE = -2;
+
+    private Task8() {
+        // приватный конструктор
+    }
+
     public static boolean knightBoardCapture(int[][] board) {
         int[][] moves = {
-                {-2, -1}, {-2, 1}, {-1, -2}, {-1, 2},
-                {1, -2}, {1, 2}, {2, -1}, {2, 1}
+            {CONFIG_VALUE, -1}, {CONFIG_VALUE, 1}, {-1, CONFIG_VALUE}, {-1, 2},
+            {1, CONFIG_VALUE}, {1, 2}, {2, -1}, {2, 1}
         };
 
         int rows = board.length;

@@ -4,18 +4,25 @@ import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class SeventhTask {
+public class Task7 {
+
+    private Task7() {
+        // приватный конструктор
+    }
+
     private static String listToString(List<Character> list) {
         StringBuilder builder = new StringBuilder(list.size());
-        for(Character ch: list) {
+
+        for (Character ch: list) {
             builder.append(ch);
         }
+
         return builder.toString();
     }
 
     private static int rotate(int n, int shift) {
         var string = Integer.toBinaryString(n);
-        var characters = string.chars().mapToObj(c -> (char)c).collect(Collectors.toList());
+        var characters = string.chars().mapToObj(c -> (char) c).collect(Collectors.toList());
         Collections.rotate(characters, shift);
         var resultString = listToString(characters);
         return Integer.parseInt(resultString, 2);

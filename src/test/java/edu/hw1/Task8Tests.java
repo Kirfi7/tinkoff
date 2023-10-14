@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class EighthTaskTests {
+public class Task8Tests {
 
     @Test
     public void testKnightBoardCaptureWithNoCaptures() {
@@ -19,7 +19,7 @@ public class EighthTaskTests {
                 {0, 1, 0, 0, 0, 0, 0, 1},
                 {0, 0, 0, 0, 1, 0, 0, 0}
         };
-        assertTrue(EighthTask.knightBoardCapture(board));
+        assertTrue(Task8.knightBoardCapture(board));
     }
 
     @Test
@@ -34,7 +34,7 @@ public class EighthTaskTests {
                 {1, 0, 0, 0, 1, 0, 1, 0},
                 {0, 0, 0, 1, 0, 1, 0, 1}
         };
-        assertFalse(EighthTask.knightBoardCapture(board));
+        assertFalse(Task8.knightBoardCapture(board));
     }
 
     @Test
@@ -49,20 +49,20 @@ public class EighthTaskTests {
                 {0, 0, 0, 0, 0, 1, 0, 0},
                 {1, 0, 0, 0, 0, 0, 0, 0}
         };
-        assertFalse(EighthTask.knightBoardCapture(board));
+        assertFalse(Task8.knightBoardCapture(board));
     }
 
     @Test
     public void testKnightBoardCaptureWithEmptyBoard() {
         int[][] board = new int[8][8];
-        assertTrue(EighthTask.knightBoardCapture(board));
+        assertTrue(Task8.knightBoardCapture(board));
     }
 
     @Test
     public void testKnightBoardCaptureWithSingleKnight() {
         int[][] board = new int[8][8];
         board[4][4] = 1;
-        assertTrue(EighthTask.knightBoardCapture(board));
+        assertTrue(Task8.knightBoardCapture(board));
     }
 
     @Test
@@ -70,7 +70,7 @@ public class EighthTaskTests {
         int[][] board = new int[8][8];
         board[4][4] = 1;
         board[6][5] = 1;
-        assertFalse(EighthTask.knightBoardCapture(board));
+        assertFalse(Task8.knightBoardCapture(board));
     }
 }
 

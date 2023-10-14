@@ -1,9 +1,17 @@
 package edu.hw1;
 
 import java.util.Arrays;
-public class SixthTask {
+
+public class Task6 {
+
+    private static final int CONFIG_NUMBER = 6174;
+
+    private Task6() {
+        // приватный конструктор
+    }
+
     public static int countK(int number) {
-        if (number == 6174) {
+        if (number == CONFIG_NUMBER) {
             return 0;
         }
 

@@ -1,6 +1,11 @@
 package edu.hw1;
 
-public class ThirdTask {
+public class Task3 {
+
+    private Task3() {
+        // приватный конструктор
+    }
+
     public static boolean isNestable(int[] array1, int[] array2) {
         if (array1.length == 0 || array2.length == 0) {
             return false;

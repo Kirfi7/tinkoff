@@ -1,6 +1,11 @@
 package edu.hw1;
 
-public class FourthTask {
+public class Task4 {
+
+    private Task4() {
+        // приватный конструктор
+    }
+
     static String fixString(String str) {
         if (str == null || str.length() % 2 != 0) {
             return "Invalid Input";
