@@ -2,11 +2,18 @@ package edu.hw1;
 
 public class Task1 {
 
+    // Константа для конвертации минут в секунды
     private static final int CONFIG_VALUE = 60;
 
     private Task1() {
         // приватный конструктор
     }
+
+    /**
+    * Преобразует время из формата "минуты:секунды" в общее количество секунд.
+    * Если формат времени некорректен или количество секунд больше или равно CONFIG_VALUE,
+    * возвращает -1.
+    */
 
     public static int minutesToSeconds(String time) {
         String[] parts = time.split(":");

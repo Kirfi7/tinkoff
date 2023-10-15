@@ -29,5 +29,17 @@ public class Task5Tests {
     public void testIsPalindromeDescendantWithNullInput() {
         assertFalse(Task5.isPalindromeDescendant(0));
     }
+
+    @Test
+    public void testIsPalindromeDescendantWithLargePalindromeNumber() {
+        assertTrue(Task5.isPalindromeDescendant(1234554321));
+    }
+
+    @Test
+    public void testIsPalindromeDescendantWithLargeNonPalindromeNumber() {
+        assertFalse(Task5.isPalindromeDescendant(1234567890));
+        assertFalse(Task5.isPalindromeDescendant(1234567898));
+        assertFalse(Task5.isPalindromeDescendant(1234567899));
+    }
 }
 

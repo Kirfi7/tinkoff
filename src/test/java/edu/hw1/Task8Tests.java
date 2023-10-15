@@ -72,5 +72,39 @@ public class Task8Tests {
         board[6][5] = 1;
         assertFalse(Task8.knightBoardCapture(board));
     }
+
+    @Test
+    public void testKnightBoardCaptureWithAllKnights() {
+        int[][] board = new int[8][8];
+        for (int i = 0; i < 8; i++) {
+            for (int j = 0; j < 8; j++) {
+                board[i][j] = 1;
+            }
+        }
+        assertFalse(Task8.knightBoardCapture(board));
+    }
+
+    @Test
+    public void testKnightBoardCaptureWithOneRow() {
+        int[][] board = {
+            {1, 1, 0, 1, 1, 0, 0, 0}
+        };
+        assertTrue(Task8.knightBoardCapture(board));
+    }
+
+    @Test
+    public void testKnightBoardCaptureWithOneColumn() {
+        int[][] board = {
+            {1},
+            {1},
+            {0},
+            {1},
+            {1},
+            {0},
+            {0},
+            {0}
+        };
+        assertTrue(Task8.knightBoardCapture(board));
+    }
 }
 

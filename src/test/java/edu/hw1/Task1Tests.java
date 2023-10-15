@@ -9,6 +9,11 @@ public class Task1Tests {
     public void testValidInput() {
         assertEquals(60, Task1.minutesToSeconds("01:00"));
         assertEquals(836, Task1.minutesToSeconds("13:56"));
+        assertEquals(0, Task1.minutesToSeconds("00:00"));
+        assertEquals(180, Task1.minutesToSeconds("03:00"));
+        assertEquals(122, Task1.minutesToSeconds("02:02"));
+        assertEquals(366, Task1.minutesToSeconds("06:06"));
+        assertEquals(1800, Task1.minutesToSeconds("30:00"));
     }
 
     @Test

@@ -25,4 +25,21 @@ public class Task3Tests {
     public void testIsNestableWithEqualMinMax() {
         assertFalse(Task3.isNestable(new int[]{1, 2, 3}, new int[]{1, 2, 3}));
     }
+
+    @Test
+    public void testIsNestableWithValidInputDescending() {
+        assertTrue(Task3.isNestable(new int[]{5, 4, 3, 2, 1}, new int[]{6, 0}));
+    }
+
+    @Test
+    public void testIsNestableWithSingleElementArrays() {
+        assertFalse(Task3.isNestable(new int[]{5}, new int[]{5}));
+        assertTrue(Task3.isNestable(new int[]{2}, new int[]{1, 3}));
+    }
+
+    @Test
+    public void testIsNestableWithLargeArrays() {
+        assertTrue(Task3.isNestable(new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}, new int[]{0, 11}));
+        assertFalse(Task3.isNestable(new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}, new int[]{0, 10}));
+    }
 }

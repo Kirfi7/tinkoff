@@ -2,12 +2,14 @@ package edu.hw1;
 
 public class Task5 {
 
+    // Значение конфигурации для проверки наследника числа
     private static final int CONFIG_VALUE = 10;
 
     private Task5() {
         // приватный конструктор
     }
 
+    // Метод для определения того, является ли число или его наследник палиндромом
     public static boolean isPalindromeDescendant(int number) {
         int currentNumber = number;
         while (currentNumber >= CONFIG_VALUE) {
@@ -19,6 +21,7 @@ public class Task5 {
         return false;
     }
 
+    // Метод для проверки, является ли число палиндромом
     private static boolean isPalindrome(int number) {
         String str = Integer.toString(number);
         int left = 0;
@@ -33,6 +36,7 @@ public class Task5 {
         return true;
     }
 
+    // Метод для получения наследника числа
     private static int getDescendant(int number) {
         String str = Integer.toString(number);
         StringBuilder descendant = new StringBuilder();

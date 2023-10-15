@@ -22,5 +22,10 @@ public class Task4Tests {
     public void testFixStringWithNullInput() {
         assertEquals("Invalid Input", Task4.fixString(null));
     }
+
+    @Test
+    public void testFixStringWithEmptyString() {
+        assertEquals("", Task4.fixString(""));
+    }
 }
 
