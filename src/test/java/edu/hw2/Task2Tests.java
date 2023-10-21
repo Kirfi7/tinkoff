@@ -41,7 +41,6 @@ public class Task2Tests {
     void testSquareWidthHeightEquality() {
         Task2.Square square = new Task2().new Square();
         square.setWidth(20);
-        // Since it's a square, height and width should be the same
         assertEquals(20, square.getWidth());
         assertEquals(20, square.getHeight());
     }

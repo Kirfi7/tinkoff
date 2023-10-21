@@ -45,7 +45,6 @@ public class Task3Tests {
         try {
             connection.execute("Some command that causes failure");
         } catch (Task3.ConnectionException e) {
-            // Check if the root cause is RuntimeException
             assertTrue(e.getCause() instanceof RuntimeException);
         }
     }
@@ -103,12 +102,10 @@ public class Task3Tests {
     public void testFaultyConnectionExecuteWithFailure() {
         Task3 task3 = new Task3();
         Task3.FaultyConnection connection = task3.new FaultyConnection(0.3);
-        // Попробуйте несколько раз, чтобы убедиться, что исключение вызывается при сбое
         for (int i = 0; i < 100; i++) {
             try {
                 connection.execute("Some command");
             } catch (Task3.ConnectionException e) {
-                // Убедитесь, что исключение имеет правильное сообщение и причину
                 assertEquals("Connection failed", e.getMessage());
                 assertTrue(e.getCause() instanceof RuntimeException);
                 return;
@@ -123,7 +120,6 @@ public class Task3Tests {
         Task3 task3 = new Task3();
         Task3.DefaultConnectionManager connectionManager = task3.new DefaultConnectionManager(failureProbability);
         double randomValue = connectionManager.random.nextDouble();
-        // Проверьте, что при вероятности сбоя больше, чем failureProbability, возвращается FaultyConnection
         if (randomValue <= failureProbability) {
             assertTrue(connectionManager.getConnection() instanceof Task3.FaultyConnection);
         } else {
@@ -138,15 +134,10 @@ public class Task3Tests {
         Task3 task3 = new Task3();
         Task3.DefaultConnectionManager connectionManager = task3.new DefaultConnectionManager(failureProbability);
         double randomValue = connectionManager.random.nextDouble();
-        // Проверьте, что при вероятности сбоя меньше, чем failureProbability, возвращается StableConnection
         if (randomValue >= failureProbability) {
             assertTrue(connectionManager.getConnection() instanceof Task3.StableConnection);
         } else {
             assertFalse(connectionManager.getConnection() instanceof Task3.StableConnection);
         }
     }
-
-
-
-
 }
