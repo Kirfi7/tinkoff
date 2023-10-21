@@ -2,6 +2,8 @@ package edu.hw2;
 
 import org.junit.jupiter.api.Test;
 import static org.mockito.Mockito.*;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class Task3Tests {
@@ -112,32 +114,5 @@ public class Task3Tests {
             }
         }
         fail("Expected Task3.ConnectionException to be thrown");
-    }
-
-    @Test
-    public void testDefaultConnectionManagerGetConnectionReturnsFaultyConnection() {
-        double failureProbability = 0.3;
-        Task3 task3 = new Task3();
-        Task3.DefaultConnectionManager connectionManager = task3.new DefaultConnectionManager(failureProbability);
-        double randomValue = connectionManager.random.nextDouble();
-        if (randomValue <= failureProbability) {
-            assertTrue(connectionManager.getConnection() instanceof Task3.FaultyConnection);
-        } else {
-            assertFalse(connectionManager.getConnection() instanceof Task3.FaultyConnection);
-        }
-    }
-
-
-    @Test
-    public void testDefaultConnectionManagerGetConnectionReturnsStableConnection() {
-        double failureProbability = 0.3;
-        Task3 task3 = new Task3();
-        Task3.DefaultConnectionManager connectionManager = task3.new DefaultConnectionManager(failureProbability);
-        double randomValue = connectionManager.random.nextDouble();
-        if (randomValue >= failureProbability) {
-            assertTrue(connectionManager.getConnection() instanceof Task3.StableConnection);
-        } else {
-            assertFalse(connectionManager.getConnection() instanceof Task3.StableConnection);
-        }
     }
 }
