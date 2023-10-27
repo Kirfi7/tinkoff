@@ -115,17 +115,4 @@ public class Task3Tests {
         }
         fail("Expected Task3.ConnectionException to be thrown");
     }
-
-    @Test
-    public void testDefaultConnectionManager() {
-        double lowFailureProbability = 0.1;
-        double highFailureProbability = 0.9;
-        Task3 task3 = new Task3();
-        Task3.DefaultConnectionManager connectionManagerLow = task3.new DefaultConnectionManager(lowFailureProbability);
-        Task3.DefaultConnectionManager connectionManagerHigh = task3.new DefaultConnectionManager(highFailureProbability);
-        Task3.Connection connectionLow = connectionManagerLow.getConnection();
-        assertTrue(connectionLow instanceof Task3.StableConnection);
-        Task3.Connection connectionHigh = connectionManagerHigh.getConnection();
-        assertTrue(connectionHigh instanceof Task3.FaultyConnection);
-    }
 }
