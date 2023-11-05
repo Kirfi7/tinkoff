@@ -5,6 +5,7 @@ import edu.project2.renderers.CustomRenderer;
 import edu.project2.solvers.SolverAStar;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+// import edu.project2.generators.RecursiveBacktrackerGenerator;
 
 public class Main {
     private Main() {
