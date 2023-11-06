@@ -35,4 +35,17 @@ public class GamePlayTest {
         assertEquals("a", game.getInputOrNull(scanner));
     }
 
+    @Test
+    void testPlay() {
+        Game game = new Game(3);
+
+        String input = "a";
+        InputStream in = new ByteArrayInputStream(input.getBytes());
+        Scanner scanner = new Scanner(in);
+        String result = game.getInputOrNull(scanner);
+        game.play();
+
+        assertEquals(input.toLowerCase(), result);
+    }
+
 }

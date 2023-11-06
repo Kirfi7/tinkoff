@@ -32,7 +32,6 @@ public class Game {
         userSequence = new char[wordLen];
         Arrays.fill(userSequence, '*');
     }
-
     // Метод play представляет игровой процесс
     public void play() {
         Scanner inputReader = new Scanner(System.in);
