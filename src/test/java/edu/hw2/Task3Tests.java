@@ -116,7 +116,7 @@ public class Task3Tests {
         fail("Expected Task3.ConnectionException to be thrown");
     }
 
-    /*@Test
+    /* @Test
     public void testDefaultConnectionManager() {
         double lowFailureProbability = 0.1;
         double highFailureProbability = 0.9;
