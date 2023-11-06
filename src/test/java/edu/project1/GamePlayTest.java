@@ -9,6 +9,9 @@ import java.io.PrintStream;
 import java.util.Scanner;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class GamePlayTest {
 
@@ -48,4 +51,17 @@ public class GamePlayTest {
         assertEquals(input.toLowerCase(), result);
     }
 
+    @Test
+    void testPlayCountinueCheck() {
+        Game game = new Game(3);
+
+        String input = "aa";
+        InputStream in = new ByteArrayInputStream(input.getBytes());
+        Scanner scanner = new Scanner(in);
+        String result = game.getInputOrNull(scanner);
+        game.play();
+
+        assertEquals(input.toLowerCase(), result);
+        assertTrue(input.length() != 1);
+    }
 }
