@@ -37,3 +37,4 @@ public class Task1 {
             .plusMinutes(Integer.parseInt(time[1]));
     }
 }
+

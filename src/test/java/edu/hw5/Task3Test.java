@@ -83,5 +83,4 @@ class Task3Test {
         String str = "123a45";
         assertFalse(Task3.isInteger(str));
     }
-
 }

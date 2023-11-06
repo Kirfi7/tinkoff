@@ -52,3 +52,4 @@ class Task2Test {
         assertEquals(expected, result);
     }
 }
+

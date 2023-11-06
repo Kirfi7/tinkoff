@@ -100,3 +100,4 @@ public class Task3 {
         return Integer.parseInt(input.substring(0, index));
     }
 }
+

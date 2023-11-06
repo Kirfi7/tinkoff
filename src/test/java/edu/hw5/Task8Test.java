@@ -91,3 +91,4 @@ class Task8Test {
         assertFalse(input.matches(Task8.REGULAR_7));
     }
 }
+

@@ -44,3 +44,4 @@ public class Task2 {
         return nextFriday;
     }
 }
+

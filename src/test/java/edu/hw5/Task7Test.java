@@ -43,3 +43,4 @@ class Task7Test {
         assertFalse(input.matches(Task7.REGULAR_3));
     }
 }
+

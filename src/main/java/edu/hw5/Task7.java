@@ -8,3 +8,4 @@ public class Task7 {
     public final static String REGULAR_2 = "^([0,1])[0,1]*\\1$";
     public final static String REGULAR_3 = "^[0,1]{1,3}$";
 }
+

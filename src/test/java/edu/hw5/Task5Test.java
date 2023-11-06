@@ -19,3 +19,4 @@ class Task5Test {
         assertFalse(input.matches(Task5.PATTERN));
     }
 }
+

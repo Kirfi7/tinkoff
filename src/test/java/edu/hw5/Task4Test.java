@@ -25,3 +25,4 @@ class Task4Test {
         assertTrue(Task4.checkPasswordCorrectness(password));
     }
 }
+

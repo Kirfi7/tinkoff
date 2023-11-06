@@ -34,3 +34,4 @@ class Task1Test {
         assertEquals(expected, result);
     }
 }
+

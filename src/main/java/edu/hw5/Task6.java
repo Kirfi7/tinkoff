@@ -13,3 +13,4 @@ public class Task6 {
         return Pattern.matches(regex, sequence); // Проверка совпадения подпоследовательности в строке
     }
 }
+

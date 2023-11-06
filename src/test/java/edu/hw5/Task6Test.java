@@ -28,3 +28,4 @@ class Task6Test {
         assertTrue(Task6.isSubsequence(sequence, subsequence));
     }
 }
+

@@ -13,3 +13,4 @@ public class Task8 {
     public final static String REGULAR_7 = "^(?![0,1]*11)[0,1]*$";
 
 }
+
