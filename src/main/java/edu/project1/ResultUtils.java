@@ -5,10 +5,13 @@ import edu.project1.SessionResult.FailedGuess;
 import edu.project1.SessionResult.SuccessfulGuess;
 import edu.project1.SessionResult.Win;
 
+// Утилиты для обработки результатов сеанса игры
 public class ResultUtils {
+    // Приватный конструктор класса
     private ResultUtils() {
     }
 
+    // Получение промежуточного результата игры
     public static SessionResult getIntermediateResult(
         String word,
         char[] userSequence,
@@ -23,6 +26,7 @@ public class ResultUtils {
         return new FailedGuess(maxMistakesAllowed, mistakeCount);
     }
 
+    // Получение окончательного результата игры или нулевого значения
     public static SessionResult getFinalResultOrNull(
         String word,
         char[] userSequence,
