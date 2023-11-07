@@ -60,6 +60,7 @@ public class Game {
             // Обновление счетчика ошибок или последовательности символов
             if (result instanceof SessionResult.FailedGuess) {
                 mistakeCount++;
+                printHangman();
             } else {
                 HiddenWordUtils.openLettersInSequence(userSequence, word, charInput);
             }
@@ -87,5 +88,72 @@ public class Game {
         logger.info("Guess a letter:");
 
         return inputReader.nextLine().toLowerCase();
+    }
+
+    void printHangman() {
+        int remainingChances = maxMistakesAllowed - mistakeCount;
+        logger.info("Remaining chances: " + remainingChances);
+
+        // Вывод палочек в зависимости от количества ошибок
+        switch (mistakeCount) {
+            case 0:
+                logger.info("|----- |");
+                logger.info("|      |");
+                logger.info("|      |");
+                logger.info("|      |");
+                logger.info("|      |");
+                logger.info("|______|");
+                break;
+            case 1:
+                logger.info("|----- |");
+                logger.info("|     O|");
+                logger.info("|      |");
+                logger.info("|      |");
+                logger.info("|      |");
+                logger.info("|______|");
+                break;
+            case 2:
+                logger.info("|----- |");
+                logger.info("|     O|");
+                logger.info("|     |");
+                logger.info("|      |");
+                logger.info("|      |");
+                logger.info("|______|");
+                break;
+            case 3:
+                logger.info("|----- |");
+                logger.info("|     O|");
+                logger.info("|    /|");
+                logger.info("|      |");
+                logger.info("|      |");
+                logger.info("|______|");
+                break;
+            case 4:
+                logger.info("|----- |");
+                logger.info("|     O|");
+                logger.info("|    /|\\");
+                logger.info("|      |");
+                logger.info("|      |");
+                logger.info("|______|");
+                break;
+            case 5:
+                logger.info("|----- |");
+                logger.info("|     O|");
+                logger.info("|    /|\\");
+                logger.info("|    / |");
+                logger.info("|      |");
+                logger.info("|______|");
+                break;
+            case 6:
+                logger.info("|----- |");
+                logger.info("|     O|");
+                logger.info("|    /|\\");
+                logger.info("|    / \\");
+                logger.info("|      |");
+                logger.info("|______|");
+                break;
+            default:
+                break;
+        }
     }
 }
