@@ -5,6 +5,7 @@ import java.util.Scanner;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+@SuppressWarnings("checkstyle:MagicNumber")
 public class Game {
     public static final String EXIT_PHRASE = "to exit";
     private static final int MIN_WORD_LEN = 3;
@@ -90,6 +91,7 @@ public class Game {
         return inputReader.nextLine().toLowerCase();
     }
 
+    @SuppressWarnings("checkstyle:MultipleStringLiterals")
     private void printHangman() {
         int remainingChances = maxMistakesAllowed - mistakeCount;
         logger.info("Remaining chances: " + remainingChances);
