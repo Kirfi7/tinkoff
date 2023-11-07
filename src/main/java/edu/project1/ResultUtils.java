@@ -46,3 +46,4 @@ public class ResultUtils {
         return new Win();
     }
 }
+

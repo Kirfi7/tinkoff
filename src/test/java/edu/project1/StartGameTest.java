@@ -22,3 +22,4 @@ public class StartGameTest {
             .isExactlyInstanceOf(IllegalArgumentException.class);
     }
 }
+
