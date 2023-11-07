@@ -90,7 +90,7 @@ public class Game {
         return inputReader.nextLine().toLowerCase();
     }
 
-    void printHangman() {
+    private void printHangman() {
         int remainingChances = maxMistakesAllowed - mistakeCount;
         logger.info("Remaining chances: " + remainingChances);
 
