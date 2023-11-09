@@ -32,3 +32,4 @@ public class SessionTest {
         assertEquals("Missed, mistake 3 out of 5.", failedGuess.message());
     }
 }
+

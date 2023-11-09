@@ -22,3 +22,4 @@ public class Dictionary {
         return WORDS[index];
     }
 }
+

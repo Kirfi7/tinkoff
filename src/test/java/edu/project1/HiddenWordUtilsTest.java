@@ -43,3 +43,4 @@ public class HiddenWordUtilsTest {
         assertThat(sequence).isEqualTo(expected);
     }
 }
+

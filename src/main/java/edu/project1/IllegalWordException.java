@@ -7,3 +7,4 @@ public class IllegalWordException extends RuntimeException {
         super(word + "can't be guessed");
     }
 }
+
