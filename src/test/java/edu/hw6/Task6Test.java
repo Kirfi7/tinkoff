@@ -10,9 +10,7 @@ class Task6Test {
 
     @Test
     void testGetBusyPortsInfo() {
-        // Assuming there are some busy ports on the system
         Task6.getBusyPortsInfo();
-        // Check if the test runs without exceptions
     }
 
     @Test
@@ -21,7 +19,6 @@ class Task6Test {
         int maxPort = 8085;
 
         Task6.getFreeAndBusyPorts(minPort, maxPort);
-        // Check if the test runs without exceptions
     }
 
     @Test
