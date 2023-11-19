@@ -10,9 +10,19 @@ import java.util.Set;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+/**
+ * Класс DiskMap реализует интерфейс для хранения пар ключ-значение на жестком диске.
+ */
 public class DiskMap implements Map<String, String> {
+    // Внутренняя структура данных для хранения пар ключ-значение в памяти
     private final HashMap<String, String> map = new HashMap<>();
 
+    /**
+     * Конструктор, который загружает данные из файла при создании объекта, если файл существует.
+     *
+     * @param nameFileRead Имя файла для чтения данных.
+     * @throws RuntimeException если файл не найден.
+     */
     public DiskMap(String nameFileRead) {
         if (new File(nameFileRead).exists()) {
             readFromFile(nameFileRead);
@@ -21,8 +31,13 @@ public class DiskMap implements Map<String, String> {
         }
     }
 
+    /**
+     * Пустой конструктор, создает пустой объект DiskMap.
+     */
     public DiskMap() {
     }
+
+    // Реализация методов интерфейса Map<String, String>
 
     @Override
     public int size() {
@@ -88,6 +103,12 @@ public class DiskMap implements Map<String, String> {
         return map.entrySet();
     }
 
+    /**
+     * Метод для записи данных из объекта в файл на диске.
+     *
+     * @param name Имя файла для записи данных.
+     * @throws RuntimeException если произошла ошибка ввода/вывода.
+     */
     public void writeToFile(String name) {
         try (FileWriter writer = new FileWriter(name)) {
             for (String i : map.keySet()) {
@@ -98,6 +119,12 @@ public class DiskMap implements Map<String, String> {
         }
     }
 
+    /**
+     * Метод для чтения данных из файла на диске и загрузки их в объект.
+     *
+     * @param name Имя файла для чтения данных.
+     * @throws RuntimeException если произошла ошибка ввода/вывода.
+     */
     private void readFromFile(String name) {
         try (FileInputStream reader = new FileInputStream(name)) {
             StringBuilder sb = new StringBuilder();
