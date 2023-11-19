@@ -32,6 +32,6 @@ class Task6Test {
     void testScanPortBusy() {
         int busyPort = 46;
         String status = Task6.scanPort(busyPort);
-        assertEquals("Свободен", status);
+        assertEquals("Занят", status);
     }
 }
