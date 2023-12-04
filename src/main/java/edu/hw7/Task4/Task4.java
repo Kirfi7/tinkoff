@@ -3,6 +3,7 @@ package edu.hw7.Task4;
 import java.security.SecureRandom;
 import java.util.List;
 import java.util.concurrent.FutureTask;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -31,15 +32,22 @@ public class Task4 {
     }
 
     public static double calculatePiMultiThread(int n, int totalThreadCount) {
+        List<FutureTask<Double>> threads = createAndStartThreads(n, totalThreadCount);
+        return collectResultsAndCalculateAverage(threads, totalThreadCount);
+    }
+
+    private static List<FutureTask<Double>> createAndStartThreads(int n, int totalThreadCount) {
         FutureTask<Double> task = new FutureTask<>(
             () -> calculatePi(n / totalThreadCount)
         );
 
-        List<FutureTask<Double>> threads = Stream.generate(() -> task)
+        return Stream.generate(() -> task)
             .limit(totalThreadCount)
             .peek(x -> new Thread(x).start())
-            .toList();
+            .collect(Collectors.toList());
+    }
 
+    private static double collectResultsAndCalculateAverage(List<FutureTask<Double>> threads, int totalThreadCount) {
         return threads.stream()
             .map(
                 x -> {

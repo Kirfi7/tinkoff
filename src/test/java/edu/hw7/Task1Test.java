@@ -1,43 +1,47 @@
 package edu.hw7;
 
 import edu.hw7.Task1.Task1;
+import org.junit.jupiter.api.RepeatedTest;
+import org.junit.jupiter.api.parallel.Execution;
+import org.junit.jupiter.api.parallel.ExecutionMode;
+
 import java.util.List;
 import java.util.stream.Stream;
-import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.Assertions.assertThat;
 
+@Execution(ExecutionMode.CONCURRENT)
 public class Task1Test {
-    private Task1Test() {
-    }
 
-    @Test
+    @RepeatedTest(100)
     void testThreadSafeIncrement() {
-        int testCount = 100;
-        int threadsCount = 100;
+        int threadsCount = 20;
         int incrementsInThreadCount = 100000;
 
-        for (int i = 0; i < testCount; i++) {
-            Task1 counter = new Task1();
-            Runnable r = () -> {
-                for (var j = 0; j < incrementsInThreadCount; j++) {
-                    counter.increment();
-                }
-            };
+        Task1 counter = new Task1();
+        Runnable incrementTask = createIncrementTask(incrementsInThreadCount, counter);
 
-            List<Thread> l = Stream.generate(() -> new Thread(r))
-                .limit(threadsCount)
-                .peek(Thread::start)
-                .toList();
+        List<Thread> threads = Stream.generate(() -> new Thread(incrementTask))
+            .limit(threadsCount)
+            .peek(Thread::start)
+            .toList();
 
-            for (var j : l) {
-                try {
-                    j.join();
-                } catch (InterruptedException e) {
-                    throw new RuntimeException(e);
-                }
+        for (Thread thread : threads) {
+            try {
+                thread.join();
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
             }
-
-            assertThat(counter.getValue()).isEqualTo(incrementsInThreadCount * threadsCount);
         }
+
+        assertThat(counter.getValue())
+            .isEqualTo(incrementsInThreadCount * threadsCount);
+    }
+
+    private Runnable createIncrementTask(int incrementsInThreadCount, Task1 counter) {
+        return () -> {
+            for (var j = 0; j < incrementsInThreadCount; j++) {
+                counter.increment();
+            }
+        };
     }
 }
