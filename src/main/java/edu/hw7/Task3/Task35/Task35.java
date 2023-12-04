@@ -8,7 +8,6 @@ import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReadWriteLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 import java.util.function.Predicate;
-import org.jetbrains.annotations.Nullable;
 
 public class Task35 implements PersonDatabase {
     private final Map<Integer, Person> database = new HashMap<>();
