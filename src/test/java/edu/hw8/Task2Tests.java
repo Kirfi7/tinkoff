@@ -30,7 +30,7 @@ public class Task2Tests {
 
     @ParameterizedTest
     @MethodSource("argumentProvider")
-    void test(int threadsCount, int[] expected) {
+    void testFibonacciParallelCalculation(int threadsCount, int[] expected) {
         int[] res = new int[expected.length];
         Fibonacci.getFirstNumbers(expected.length, threadsCount, res);
 
