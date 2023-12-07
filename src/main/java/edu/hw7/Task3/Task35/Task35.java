@@ -8,7 +8,6 @@ import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReadWriteLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 import java.util.function.Predicate;
-import org.jetbrains.annotations.Nullable;
 
 public class Task35 implements PersonDatabase {
     private final Map<Integer, Person> database = new HashMap<>();
@@ -38,17 +37,17 @@ public class Task35 implements PersonDatabase {
     }
 
     @Override
-    public @Nullable Person findByName(String name) {
+    public synchronized Person findByName(String name) {
         return findBy(person -> person.name().equals(name));
     }
 
     @Override
-    public @Nullable Person findByAddress(String address) {
+    public synchronized Person findByAddress(String address) {
         return findBy(person -> person.address().equals(address));
     }
 
     @Override
-    public @Nullable Person findByPhone(String phone) {
+    public synchronized Person findByPhone(String phone) {
         return findBy(person -> person.phoneNumber().equals(phone));
     }
 
@@ -68,3 +67,4 @@ public class Task35 implements PersonDatabase {
         return result;
     }
 }
+
