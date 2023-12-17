@@ -13,3 +13,4 @@ public class Task1 {
         return counter.intValue();
     }
 }
+

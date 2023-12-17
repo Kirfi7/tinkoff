@@ -14,3 +14,4 @@ public class Task2 {
             .reduce(BigInteger.ONE, BigInteger::multiply);
     }
 }
+

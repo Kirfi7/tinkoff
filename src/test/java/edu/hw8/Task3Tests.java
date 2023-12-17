@@ -27,7 +27,7 @@ public class Task3Tests {
     }
 
     @Test
-    void test() {
+    void testPasswordCracking() {
         int index = 0;
 
         for (int i = 20; i < 155; i++) {

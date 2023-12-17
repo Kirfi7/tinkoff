@@ -8,9 +8,6 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 public class Task2Tests {
 
-    /* private Task2Tests() {
-    }
-
     @Test
     void testDirSearch() {
         List<String> dirList = List.of("src", "main", "java", "edu");
