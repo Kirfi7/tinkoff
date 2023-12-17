@@ -21,7 +21,7 @@ public class SecondTaskTest {
     };
 
     @Test
-    void test() {
+    void testCacheProxy() {
         FibCalculator proxy = CacheProxy.create(FIB_CALCULATOR, FibCalculator.class);
 
         long timeFirstRun = getTime(proxy);
