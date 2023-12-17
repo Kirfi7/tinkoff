@@ -14,3 +14,4 @@ public class FirstTaskTest {
         assertThat(result.toString()).isEqualTo("Hello, ByteBuddy!");
     }
 }
+
