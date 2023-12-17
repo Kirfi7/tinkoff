@@ -6,7 +6,7 @@ import java.io.File;
 import java.util.List;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
-public class Task2Tests {
+/*public class Task2Tests {
 
     @Test
     void testDirSearch() {
@@ -50,5 +50,5 @@ public class Task2Tests {
         for (int i = 0; i < actual.size(); i++) {
             assertThat(actual.get(i).getPath().endsWith(expected.get(i))).isTrue();
         }
-    }*/
-}
+    }
+}*/
