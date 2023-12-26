@@ -74,3 +74,4 @@ public class Task3 extends ClassLoader {
         mv.visitEnd();
     }
 }
+
